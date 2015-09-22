@@ -11,7 +11,9 @@ class Question(models.Model):
     pub_date = models.DateTimeField("date published")
 
     def __unicode__(self):
+        #TODO: By default, this is the value that is returned to Django Admin, and it must be a string.
         return self.question_text
+        #return str(self.pub_date)
 
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
