@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
+#TODO: This is the main URL governing the entire project.
+#The url() function is passed four arguments, two required: regex and view, and two optional: kwargs, and name.
+#name is used as an identifier, especially in your templates/html
 urlpatterns = [
+    url(r'^polls/', include('polls.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]
