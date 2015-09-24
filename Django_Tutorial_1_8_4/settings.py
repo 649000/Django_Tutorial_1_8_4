@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'Django_Tutorial_1_8_4.urls'
 
+#FIXME: it's django.template NOT django.templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
