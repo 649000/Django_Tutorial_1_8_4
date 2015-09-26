@@ -15,19 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-#TODO: This is the main URL governing the entire project.
-#Add new URL for each app, by using the includes function
+# TODO: This is the main URL governing the entire project.
+# Add new URL for each app, by using the includes function
 # Each app should have their own url file.
-#polls.url where polls is the name of the app followed the name of the urlconf file.
+# polls.url where polls is the name of the app followed the name of the urlconf file.
 
 
-#The url() function is passed four arguments, two required: regex and view, and two optional: kwargs, and name.
-#name is used as an identifier, especially in your templates/html
+# The url() function is passed four arguments, two required: regex and view, and two optional: kwargs, and name.
+# name is used as an identifier, especially in your templates/html
 
 
 
 urlpatterns = [
-    #The regex does not end with $ which defines end of string match but rather it's opended.
-     url(r'^polls/', include('polls.urls', namespace="polls")),
+    # The regex does not end with $ which defines end of string match but rather it's opended.
+    # NAMESPACE for include() function
+    url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^admin/', include(admin.site.urls)),
 ]
